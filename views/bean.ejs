@@ -1,0 +1,27 @@
+<form action="/bean" method="POST">
+  <h1>Beans</h1><br>
+    Amount: 
+	<input type="number" name="amount"
+		placeholder="Amount in kgs" id="amountKgs" oninput="
+        calcFunction(this.value)
+        "><br>
+        <br>
+        Price: <span id="finalPricePreview">0</span>
+        <input type="hidden" id="finalPrice" name="finalPrice" value="0"><br />
+	<button>Submit</button><br>
+
+</form>
+
+<script>
+    const rate = 1500;
+    function calcFunction(amount){
+        var price = amount * rate;
+        document.getElementById("finalPricePreview").innerHTML = price;
+        document.getElementById("finalPrice").value = price;
+
+    }
+
+    
+
+
+</script>
